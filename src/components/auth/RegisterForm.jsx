@@ -6,10 +6,14 @@ import { useDispatch, useSelector } from "react-redux";
 import PulseLoader from "react-spinners/PulseLoader";
 import { Link, useNavigate } from "react-router-dom";
 import { registerUser } from "../../features/userSlice";
+import { useState } from "react";
+import Picture from "./Picture";
 export default function RegisterForm() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { status, error } = useSelector((state) => state.user);
+  const [picture, setPicture] = useState();
+  const [readablePicture, setReadablePicture] = useState("");
   const {
     register,
     handleSubmit,
@@ -25,9 +29,9 @@ export default function RegisterForm() {
     }
   };
   return (
-    <div className="h-screen w-full flex items-center justify-center overflow-hidden">
+    <div className="min-h-screen w-full flex items-center justify-center overflow-hidden">
       {/* Container */}
-      <div className="max-w-md space-y-8 p-10 dark:bg-dark_bg_2 rounded-xl">
+      <div className="w-full max-w-md space-y-8 p-10 dark:bg-dark_bg_2 rounded-xl">
         {/*Heading*/}
         <div className="text-center dark:text-dark_text_1">
           <h2 className="mt-6 text-3xl font-bold">Welcome</h2>
@@ -52,7 +56,7 @@ export default function RegisterForm() {
           <AuthInput
             name="status"
             type="text"
-            placeholder="Status"
+            placeholder="Status (Optional)"
             register={register}
             error={errors?.status?.message}
           />
@@ -62,6 +66,12 @@ export default function RegisterForm() {
             placeholder="Password"
             register={register}
             error={errors?.password?.message}
+          />
+          {/* Picture */}
+          <Picture
+            readablePicture={readablePicture}
+            setReadablePicture={setReadablePicture}
+            setPicture={setPicture}
           />
           {/*if we have an error*/}
           {error ? (
