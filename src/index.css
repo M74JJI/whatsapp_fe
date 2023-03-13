@@ -3,7 +3,23 @@
 @tailwind utilities;
 
 @layer components {
-  .customh1 {
-    @apply text-blue-500 bg-red-200;
+  .container {
+    @apply w-[1700px] h-full;
+  }
+  .btn {
+    @apply w-[40px] h-[40px] rounded-full flex items-center justify-center active:bg-dark_hover_1;
+  }
+  .p16 {
+    @apply px-[16px];
+  }
+  .textPrimary {
+    font-size: 16px;
+    line-height: 21px;
+    @apply text-dark_text_1;
+  }
+  .textSecondary {
+    font-size: 14px;
+    line-height: 19px;
+    @apply text-dark_text_2;
   }
 }
