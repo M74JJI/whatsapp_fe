@@ -25,6 +25,10 @@
   .input {
     @apply w-full dark:bg-dark_bg_2 p-1.5 dark:text-dark_text_1 rounded-lg flex-1 outline-none;
   }
+  .convos {
+    height: calc(100vh - 220px);
+    overflow-y: auto;
+  }
 }
 
 /*----Animations----*/
@@ -35,4 +39,18 @@
   0% {
     transform: rotate(-90deg);
   }
+}
+
+/*----Custom scrollbar----*/
+/*--Width--*/
+.scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+/*--Track--*/
+.scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+/*--Thumb--*/
+.scrollbar::-webkit-scrollbar-thumb {
+  background: #444e54;
 }
