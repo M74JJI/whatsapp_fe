@@ -20,7 +20,7 @@ export default function ChatContainer() {
     }
   }, [activeConversation]);
   return (
-    <div className="relative w-full h-full border-l dark:border-l-dark_border_2 select-none overflow-hidden">
+    <div className="relative w-full h-full border-l dark:border-l-dark_border_2 select-none overflow-hidden ">
       {/*Container*/}
       <div>
         {/*Chat header*/}
