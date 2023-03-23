@@ -60,3 +60,74 @@
 .scrollbar::-webkit-scrollbar-thumb {
   background: #444e54;
 }
+/*---Emoji picker*/
+.epr-dark-theme {
+  background: #202c33 !important;
+  border-radius: 0 !important;
+  border: none !important;
+}
+.epr-dark-theme {
+  width: 100% !important;
+}
+
+.openEmojiAnimation {
+  animation: openAn 0.1s forwards;
+}
+@keyframes openAn {
+  0% {
+    transform: translateY(60px);
+  }
+}
+.epr-search-container input {
+  background: #222e35 !important;
+  border-radius: 0 !important;
+  border: none !important;
+  font-size: 13px;
+}
+.epr-preview {
+  display: none !important;
+}
+.epr-emoji-category-label {
+  background: transparent !important;
+  font-size: 15px;
+  font-weight: normal !important;
+}
+/*--- Emoji Scroollbar
+  /* width */
+.epr-body::-webkit-scrollbar {
+  width: 6px !important;
+}
+
+/* Track */
+.epr-body::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+
+/* Handle */
+.epr-body::-webkit-scrollbar-thumb {
+  background: #444e54 !important;
+}
+.epr-category-nav {
+  padding: 10px 0 !important;
+}
+.epr-category-nav .epr-active::after {
+  content: "";
+  width: 140px;
+  height: 4px;
+  background: #00a884;
+  position: absolute;
+  bottom: -10px;
+  left: -55px;
+}
+.epr-header {
+  display: flex;
+  flex-direction: column-reverse;
+}
+.openToolsAnimation {
+  animation: openTools 0.2s forwards;
+}
+@keyframes openTools {
+  0% {
+    transform: translateY(100%);
+  }
+}
