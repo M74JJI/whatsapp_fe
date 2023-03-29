@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import {
   BrowserRouter as Router,
@@ -16,8 +16,10 @@ import Register from "./pages/register";
 const socket = io(process.env.REACT_APP_API_ENDPOINT.split("/api/v1")[0]);
 
 function App() {
+  const [connected, setConnected] = useState(false);
   const { user } = useSelector((state) => state.user);
   const { token } = user;
+
   return (
     <div className="dark">
       <SocketContext.Provider value={socket}>

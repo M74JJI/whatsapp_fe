@@ -1,19 +1,22 @@
-# Let's add tailwind css
+# From boring to realtime
 
-Let's setup tailwind css with our react app.
+Let's work on the realtime functionalities.
 
 ## Objectifs
 
-- Let's install tailwind css.
+- Establish a realtime connection between frontend and backend.
 
-- Explain it a little bit.
+- Register a user when opening the application.
 
-- Explain few concepts we will use and need.
+- Send and receive messages realtime.
 
-## Packages we will use
+- Realtime online status.
 
-**tailwindcss:** <br/>[![tailwindcss](https://img.shields.io/npm/v/tailwindcss.svg?logo=tailwindcss)](https://www.npmjs.com/package/tailwindcss)
-<br/>
+- Realtime typing functionality.
+
+## New packages we will use
+
+**socket.io:** <br/>[![socket.io](https://img.shields.io/npm/v/socket.io.svg?logo=socket.io)](https://www.npmjs.com/package/socket.io)
 
 ## Course created by
 
