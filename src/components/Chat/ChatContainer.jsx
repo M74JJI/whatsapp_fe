@@ -6,7 +6,7 @@ import { ChatActions } from "./actions";
 import ChatHeader from "./header/ChatHeader";
 import ChatMessages from "./messages/ChatMessages";
 
-export default function ChatContainer({ onlineUsers }) {
+export default function ChatContainer({ onlineUsers, typing }) {
   const dispatch = useDispatch();
   const { activeConversation, messages } = useSelector((state) => state.chat);
   const { user } = useSelector((state) => state.user);
@@ -33,7 +33,7 @@ export default function ChatContainer({ onlineUsers }) {
           )}
         />
         {/*Chat messages*/}
-        <ChatMessages />
+        <ChatMessages typing={typing} />
         {/* Chat Actions */}
         <ChatActions />
       </div>
