@@ -10,6 +10,7 @@ module.exports = {
         dark_bg_3: "#182229",
         dark_bg_4: "#222E35",
         dark_bg_5: "#233138",
+        dark_bg_6: "#101A20",
         dark_border_1: "#222D34",
         dark_border_2: "#313D45",
         dark_hover_1: "#2A3942",
