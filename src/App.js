@@ -17,10 +17,13 @@ import Register from "./pages/register";
 const socket = io(process.env.REACT_APP_API_ENDPOINT.split("/api/v1")[0]);
 
 function App() {
-  const [connected, setConnected] = useState(false);
-  const { user } = useSelector((state) => state.user);
-  const { token } = user;
+  //const [connected, setConnected] = useState(false);
   const dispatch = useDispatch();
+  const { user } = useSelector((state) => state.user);
+  const { files } = useSelector((state) => state.chat);
+  console.log("files", files);
+  const { token } = user;
+
   return (
     <div className="dark">
       <button onClick={() => dispatch(logout())} className="hidden">

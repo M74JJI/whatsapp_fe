@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { PhotoIcon } from "../../../../../svg";
 import { useDispatch } from "react-redux";
 import { addFiles } from "../../../../../features/chatSlice";
+import { getFileType } from "../../../../../utils/file";
 
 export default function PhotoAttachment() {
   const dispatch = useDispatch();
@@ -32,7 +33,7 @@ export default function PhotoAttachment() {
             addFiles({
               file: file,
               fileData: e.target.result,
-              type: file.type.split("/")[0],
+              type: getFileType(file.type),
             })
           );
         };
@@ -51,8 +52,9 @@ export default function PhotoAttachment() {
       <input
         type="file"
         hidden
+        multiple
         ref={inputRef}
-        accept="image/png,image/jpeg,image/gif,image/webp,video/mp4,vide/mpeg"
+        accept="image/png,image/jpeg,image/gif,image/webp,video/mp4,video/mpeg"
         onChange={imageHandler}
       />
     </li>

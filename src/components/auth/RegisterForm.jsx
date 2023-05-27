@@ -52,7 +52,6 @@ export default function RegisterForm() {
       `https://api.cloudinary.com/v1_1/${cloud_name}/image/upload`,
       formData
     );
-    console.log(data);
     return data;
   };
   return (
