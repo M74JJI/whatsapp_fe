@@ -9,6 +9,8 @@ import {
 } from "../../../../features/chatSlice";
 import SocketContext from "../../../../context/SocketContext";
 import ClipLoader from "react-spinners/ClipLoader";
+import VideoThumbnail from "react-video-thumbnail";
+
 function HandleAndSend({ activeIndex, setActiveIndex, message, socket }) {
   const dispatch = useDispatch();
   const [loading, setLoading] = useState(false);
@@ -56,6 +58,8 @@ function HandleAndSend({ activeIndex, setActiveIndex, message, socket }) {
                 alt=""
                 className="w-full h-full object-cover"
               />
+            ) : file.type === "VIDEO" ? (
+              <VideoThumbnail videoUrl={file.fileData} />
             ) : (
               <img
                 src={`../../../../images/file/${file.type}.png`}
