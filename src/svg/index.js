@@ -27,6 +27,7 @@ import MuteIcon from "./Mute";
 import NoVideoIcon from "./NoVideo";
 import TraingleIcon from "./triangle";
 import FileIcon from "./File";
+import DownloadIcon from "./Download";
 export {
   CommunityIcon,
   StoryIcon,
@@ -57,4 +58,5 @@ export {
   NoVideoIcon,
   TraingleIcon,
   FileIcon,
+  DownloadIcon,
 };
