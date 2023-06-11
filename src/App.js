@@ -8,7 +8,6 @@ import {
 } from "react-router-dom";
 import { io } from "socket.io-client";
 import SocketContext from "./context/SocketContext";
-import { logout } from "./features/userSlice";
 //Pages
 import Home from "./pages/home";
 import Login from "./pages/login";
@@ -24,9 +23,6 @@ function App() {
 
   return (
     <div className="dark">
-      <button onClick={() => dispatch(logout())} className="hidden">
-        logout
-      </button>
       <SocketContext.Provider value={socket}>
         <Router>
           <Routes>
