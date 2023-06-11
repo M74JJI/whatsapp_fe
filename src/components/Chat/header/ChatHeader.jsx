@@ -1,10 +1,19 @@
 import { useSelector } from "react-redux";
-import { DotsIcon, SearchLargeIcon } from "../../../svg";
+import {
+  CallIcon,
+  DotsIcon,
+  SearchLargeIcon,
+  VideoCallIcon,
+} from "../../../svg";
 import { capitalize } from "../../../utils/string";
-
-export default function ChatHeader({ online }) {
+import { useEffect, useRef, useState } from "react";
+import SocketContext from "../../../context/SocketContext";
+import Peer from "simple-peer";
+function ChatHeader({ online, callUser, socket }) {
   const { activeConversation } = useSelector((state) => state.chat);
+  const { user } = useSelector((state) => state.user);
   const { name, picture } = activeConversation;
+
   return (
     <div className="h-[59px] dark:bg-dark_bg_2 flex items-center p16 select-none">
       {/*Container*/}
@@ -31,6 +40,20 @@ export default function ChatHeader({ online }) {
         </div>
         {/*Right*/}
         <ul className="flex items-center gap-x-2.5">
+          {1 == 1 ? (
+            <li onClick={() => callUser()}>
+              <button className="btn">
+                <VideoCallIcon />
+              </button>
+            </li>
+          ) : null}
+          {1 == 1 ? (
+            <li>
+              <button className="btn">
+                <CallIcon />
+              </button>
+            </li>
+          ) : null}
           <li>
             <button className="btn">
               <SearchLargeIcon className="dark:fill-dark_svg_1" />
@@ -46,3 +69,10 @@ export default function ChatHeader({ online }) {
     </div>
   );
 }
+
+const ChatHeaderWithSocket = (props) => (
+  <SocketContext.Consumer>
+    {(socket) => <ChatHeader {...props} socket={socket} />}
+  </SocketContext.Consumer>
+);
+export default ChatHeaderWithSocket;

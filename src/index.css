@@ -13,6 +13,9 @@
   .btn {
     @apply w-[40px] h-[40px] rounded-full flex items-center justify-center active:bg-dark_hover_1;
   }
+  .btn_secondary {
+    @apply w-[45px] h-[45px] rounded-full flex items-center justify-center bg-dark_bg_2;
+  }
   .p16 {
     @apply px-[16px];
   }
@@ -48,6 +51,24 @@
   }
   .fileThumbnail:hover .removeFileIcon {
     display: block;
+  }
+  .callbg {
+    background-image: linear-gradient(black, black),
+      url(https://res.cloudinary.com/dmhcnhtng/image/upload/v1677358270/Untitled-1_copy_rpx8yb.jpg);
+    background-size: cover;
+    background-blend-mode: saturation;
+  }
+  .largeVideoCall {
+    @apply absolute top-0 bottom-0 left-0 right-0 z-20 object-cover h-full bg-red-400 cursor-pointer;
+  }
+  .SmallVideoCall {
+    @apply w-28 h-32 object-cover absolute bottom-4 right-2 z-30 bg-blue-500 cursor-pointer rounded-lg;
+  }
+  .moveVideoCall {
+    @apply bottom-32 transition-all duration-100;
+  }
+  .moveActionsComp {
+    @apply block;
   }
 }
 
