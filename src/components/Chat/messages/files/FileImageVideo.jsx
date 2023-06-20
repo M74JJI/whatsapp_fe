@@ -1,6 +1,6 @@
 export default function FileImageVideo({ url, type }) {
   return (
-    <div>
+    <div className="z-20">
       {type === "IMAGE" ? (
         <img src={url} alt="" className="cursor-pointer" />
       ) : (

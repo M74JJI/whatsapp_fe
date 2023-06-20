@@ -9,10 +9,13 @@ import { capitalize } from "../../../utils/string";
 import { useEffect, useRef, useState } from "react";
 import SocketContext from "../../../context/SocketContext";
 import Peer from "simple-peer";
+import {
+  getConversationName,
+  getConversationPicture,
+} from "../../../utils/chat";
 function ChatHeader({ online, callUser, socket }) {
   const { activeConversation } = useSelector((state) => state.chat);
   const { user } = useSelector((state) => state.user);
-  const { name, picture } = activeConversation;
 
   return (
     <div className="h-[59px] dark:bg-dark_bg_2 flex items-center p16 select-none">
@@ -23,15 +26,25 @@ function ChatHeader({ online, callUser, socket }) {
           {/*Conversation image*/}
           <button className="btn">
             <img
-              src={picture}
-              alt={`${name} picture`}
+              src={
+                activeConversation.isGroup
+                  ? activeConversation.picture
+                  : getConversationPicture(user, activeConversation.users)
+              }
+              alt=""
               className="w-full h-full rounded-full object-cover"
             />
           </button>
           {/*Conversation name and online status*/}
           <div className="flex flex-col">
             <h1 className="dark:text-white text-md font-bold">
-              {capitalize(name.split(" ")[0])}
+              {activeConversation.isGroup
+                ? activeConversation.name
+                : capitalize(
+                    getConversationName(user, activeConversation.users).split(
+                      " "
+                    )[0]
+                  )}
             </h1>
             <span className="text-xs dark:text-dark_svg_2">
               {online ? "online" : ""}

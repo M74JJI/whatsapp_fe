@@ -166,3 +166,77 @@
     transform: translateY(100%);
   }
 }
+/* React select */
+.css-obio5r-control:hover {
+  border-color: transparent !important;
+}
+.css-obio5r-control {
+  box-shadow: none !important;
+}
+
+.css-1hb7zxy-IndicatorsContainer {
+  display: none !important;
+}
+.css-1p3m7a8-multiValue {
+  background: transparent !important;
+  color: #fff !important;
+  border: 1px solid #025144;
+  border-radius: 5px !important;
+}
+.css-1p3m7a8-multiValue span {
+  color: #fff !important;
+}
+.css-1p3m7a8-multiValue span:hover {
+  background: transparent !important;
+}
+.css-tj5bde-Svg {
+  background: red;
+  border-radius: 50%;
+}
+.css-12a83d4-MultiValueRemove:hover {
+  background: transparent !important;
+}
+.css-12a83d4-MultiValueRemove:hover svg {
+  fill: #fff !important;
+}
+.css-qbdosj-Input input {
+  color: #fff !important;
+}
+.css-1nmdiq5-menu {
+  background: transparent !important;
+  color: #fff !important;
+  border: 1px solid #025144;
+  border-radius: 5px !important;
+}
+.css-1n6sfyn-MenuList {
+  background: transparent !important;
+}
+
+/*--- MenuList Scroollbar
+  /* width */
+.css-1n6sfyn-MenuList::-webkit-scrollbar {
+  width: 6px !important;
+}
+/* Track */
+.css-1n6sfyn-MenuList::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+/* Handle */
+.css-1n6sfyn-MenuList::-webkit-scrollbar-thumb {
+  background: #444e54 !important;
+}
+.css-10wo9uf-option span {
+  color: #fff !important;
+}
+
+.createGroupAnimation {
+  animation: cga 0.5s;
+}
+@keyframes cga {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}

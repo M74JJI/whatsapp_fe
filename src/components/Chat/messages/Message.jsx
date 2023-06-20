@@ -9,7 +9,17 @@ export default function Message({ message, me }) {
       }`}
     >
       {/*Message Container*/}
-      <div>
+      <div className="relative">
+        {/* sender user message */}
+        {!me && message.conversation.isGroup && (
+          <div className="absolute top-0.5 left-[-37px]">
+            <img
+              src={message.sender.picture}
+              alt=""
+              className="w-8 h-8 rounded-full"
+            />
+          </div>
+        )}
         <div
           className={`relative h-full dark:text-dark_text_1 p-2 rounded-lg
         ${me ? "bg-green_3" : "dark:bg-dark_bg_2"}

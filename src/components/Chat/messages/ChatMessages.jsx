@@ -10,7 +10,7 @@ export default function ChatMessages({ typing }) {
   const endRef = useRef();
   useEffect(() => {
     scrollToBottom();
-  }, [messages]);
+  }, [messages, typing]);
   const scrollToBottom = () => {
     endRef.current.scrollIntoView({ behavior: "smooth" });
   };
